@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Oswald:wght@700&family=Quintessential&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+
+}
+
+body{
+    background-color: #eec0c6;
+background-image: linear-gradient(to right, #eec0c6 0%, #7ee8fa 74%);
+
+}
+#Logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+
+ul {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+
+}
+
+
+
+.navlink {
+    /* border: 2px solid red; */
+    margin: auto;
+    padding: 5px 5px;
+}
+
+.navlink a {
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    /* color: black; */
+}
+.navlink a:hover {
+    text-decoration: underline;
+    color: blueviolet;
+    /* color: black; */
+}
+
+/* end of Navbar */
+
+/* start of Main body */
+
+.MainBox {
+    /* border: 1px solid black; */
+    display: flex;
+    width: 80vw;
+    height: 55vh;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+
+}
+
+.List {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.List a {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: blueviolet;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    /* border: 1px solid black; */
+}
+
+.List a:hover {
+    box-shadow: inset 200px 0 0 0 #54b3d6;
+    color: white;
+}
+
+.Features {
+    /* display: flex; */
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    /* margin: auto; */
+    margin-top: 20px;
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 5px 5px;
+
+
+    /* flex-wrap: wrap; */
+
+}
+
+/* end of Main Box */
+
+/* start of Aside Box */
+.AsideBox1 {
+    position: fixed;
+    border: 1px ridge black;
+    width: 18vw;
+    height: 50vh;
+    top: 100px;
+    right: 10px;
+    text-align: center;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+.AsideBox1 h1 {
+    position: relative;
+    top: 10%;
+}
+
+.AsideBox1 p {
+    position: relative;
+    top: 30%;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* End Of Aside Box1 */
+
+
+/* Start Of Aside Box2 */
+.AsideBox2 {
+    position: fixed;
+    /* border: 2px solid black; */
+    width: 18vw;
+    height: 22vh;
+    top: 70px;
+    right: 0;
+}
+
+.AsideBox2 h2 {
+    text-align: center;
+    position: relative;
+    top: 10%;
+}
+
+.AsideBox2 h3 {
+    position: relative;
+    top: 30%;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* End of Aside Box2 */
+
+/* Start Of Footer */
+.FooterMain {
+
+    /* border: 2px solid black; */
+    text-align: center;
+    height: 4vw;
+    width: 80vw;
+    /* background-color: black; */
+    position: fixed;
+    bottom: 55px;
+}
+
+.FooterMain ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.FooterMain img {
+    width: 60px;
+    height: 60px;
+}
+
+
+/* End of Footer */
+
+/* style for Dictonary.Html */
+
+.Searchcontainer form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Searchcontainer form h1 {
+    margin-top: 80px;
+}
+
+.Searchcontainer input {
+    border: 2px solid black;
+    width: 500px;
+    border-radius: 10px;
+    height: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.Searchcontainer form #btn {
+    /* background: #54b3d6;
+    background-image: linear-gradient(to bottom, #3498db, #2980b9); */
+    background: #364547;
+    color: white;
+    border-radius: 28px;
+    font-family: Georgia;
+    font-size: 12px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.Searchcontainer form #btn:hover {
+    background-color: #fff;
+    color: #364547;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+/* AnsContainer */
+.InfoContainer #myList,
+h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+#SearchField:focus {
+    border: 2px solid red;
+}
+
+/* Todo List style */
+.TodoMain {
+    margin-top: 80px;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.TodoMain input {
+    /* border: 2px solid black; */
+    width: 500px;
+    border-radius: 10px;
+    height: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.TodoMain button {
+    background: #54b3d6;
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.Container {
+    margin-top: 20px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    height: 50%;
+    width: 50%;
+}
+
+.Container #myList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container .myList li {
+    /* border: 2px solid black; */
+}
+
+/* Currency Converter */
+
+.CCContainer {
+    border: 2px solid black;
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.CCContainer .mainBox {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.box1 .box2 {
+    border: 2px solid black;
+    width: 250px;
+
+}
+
+.mainBox select {
+    width: 95%;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    margin-top: 3rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #3498db;
+}
+
+.mainBox .currinput {
+    width: 95%;
+    height: 40px;
+    font-size: 1rem;
+    margin-top: 0.85rem;
+    border-radius: 10px;
+    /* border: none; */
+    background: whitesmoke;
+    /* outline: none; */
+    padding: 0 1rem;
+    text-align: center;
+
+}
+
+.CCContainer .btn {
+    width: 98%;
+    height: 40px;
+    background: #364547;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.CCContainer .btn:hover {
+    background-color: #fff;
+    color: #364547;
+}

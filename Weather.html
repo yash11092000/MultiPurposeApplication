@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+      .Weathermain {
+        width: 600px;
+        height: 500px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+      .WeatherBox {
+        margin-top: 5px;
+        width: 300px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .WeatherBox input {
+        width: 200px;
+        border-radius: 10px;
+        height: 40px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      #WeatherData {
+        width: 400px;
+        height: 200px;
+        position: fixed;
+        bottom: 100px;
+        display: none;
+        text-align: center;
+      }
+      #Wbtn{
+        
+    width: 68%;
+    height: 40px;
+    background: #364547;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+      }
+      #Wbtn:hover {
+    background-color: #fff;
+    color: #364547;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="navlink">
+          <a href="./index.html" id="Logo">Multi Purpose Application</a>
+        </li>
+        <li class="navlink"><a href="./Contact.html">Contact Me</a></li>
+        <li class="navlink"><a href="./About.html">About Me</a></li>
+        <li class="navlink"><a href="./Feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+    <div class="Weathermain">
+      <div class="WeatherBox">
+        <label for="">Enter City Name</label><br />
+        <input type="text" id="city" />
+        <button id="Wbtn">Fetch</button>
+      </div>
+      <div id="WeatherData">
+        <h1 id="Name">???</h1>
+        <h2 id="temp">???</h2>
+        <h3 id="desc">???</h3>
+      </div>
+    </div>
+  </body>
+  <script>
+   
+    $(document).ready(function () {
+      $("#Wbtn").click(function () {
+        $("#WeatherData").slideDown();
+        let city = document.getElementById("city").value;
+        if (city != null || city != "" || city.length != 0) {
+          fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=92eea7ff685322eb7f5624dac1640d6d`
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("Name").innerText =
+                "Name of city is :" + data["name"];
+              document.getElementById("temp").innerText =
+                "Tempreture is :" + (data["main"]["temp"]-273.15).toFixed(2);
+              document.getElementById("desc").innerText =
+                "Todays weather :   " + ((data["weather"][0]["description"]));
+
+            })
+
+            .catch((err) => alert("Wrong City"));
+            document.getElementById("city").value = ' ';
+
+        }
+        else{
+            alert("Enter Something")
+        }
+      });
+    });
+  </script>
+</html>

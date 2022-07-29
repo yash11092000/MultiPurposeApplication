@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictonary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+
+        <ul>
+            <li class="navlink"><a href="./index.html" id="Logo">Multi Purpose Application</a></li>
+            <li class="navlink"><a href="./Contact.html">Contact Me</a></li>
+            <li class="navlink"><a href="./About.html">About Me</a></li>
+            <li class="navlink"><a href="./Feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <div class="Searchcontainer">
+            <form action="Dictonary.html" id="frm">
+                <h1>Local Dictonary</h1>
+                <input id="SearchField" type="text" required="required" placeholder="Search For Any Word Or Phrase"
+                    onfocus="getClear()" autocomplete="off">
+                <button type="button" onclick="getInfo()" id="btn">Search</button>
+            </form>
+        </div>
+        <div class="InfoContainer">
+            <h2>Following are some result </h2>
+            <ul id="myList">
+
+
+            </ul>
+
+        </div>
+    </div>
+    <script>
+
+        function getClear() {
+            let frm = document.getElementById("frm");
+            frm.reset();
+            const list = document.getElementById("myList");
+            while (list.hasChildNodes()) {
+                list.removeChild(list.firstChild);
+            }
+
+        }
+
+        async function getInfo() {
+
+            let Word = document.getElementById("SearchField").value;
+            let response = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + Word);
+            if (response.status != 404) {
+                let data = await response.json();
+                if (data)
+                    console.log(data[0].meanings[0].definitions[3])
+                let length = data[0].meanings[0].definitions.length;
+                if (length >= 4) {
+                    length = 4;
+                }
+                for (let i = 0; i < length; i++) {
+                    const node = document.createElement("li");
+                    const textnode = document.createTextNode(i + 1 + "-->" + data[0].meanings[0].definitions[i].definition + " ");
+                    node.appendChild(textnode);
+                    document.getElementById("myList").appendChild(node);
+                }
+                document.getElementById("SearchField").innerText = "";
+            }
+            else {
+                const node = document.createElement("li");
+                const textnode = document.createTextNode("Something Went Wrong");
+                node.appendChild(textnode);
+                document.getElementById("myList").appendChild(node);
+
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

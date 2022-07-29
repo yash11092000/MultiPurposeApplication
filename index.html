@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="App.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .MainBox2 {
+            display: none;
+            padding: 50px;
+            width: 80vw;
+            height: 70vh;
+            position: absolute;
+            z-index: -1;
+            background-image: url("./Images/bg2.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        #ShowBtn {
+            background: #364547;
+            color: white;
+            border-radius: 28px;
+            font-family: Georgia;
+            font-size: 12px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+            position: absolute;
+            left: 35%;
+            top: 20%;
+            z-index: 1;
+        }
+        #ShowBtn:hover {
+            background-color: #fff;
+            color: #364547;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        }
+    </style>
+</head>
+</head>
+<nav>
+
+    <ul >
+        <li class="navlink"><a href="./index.html" id="Logo">Multi Purpose Application</a></li>
+        <li class="navlink"><a href="./Contact.html">Contact Me</a></li>
+        <li class="navlink"><a href="./About.html">About Me</a></li>
+        <li class="navlink"><a href="./Feedback.html">Feedback</a></li>
+        <li class="navlink">
+            <h4 id="Month"></h3>
+            <h4 id="Time"></h3> 
+        </li>
+        
+    </ul>
+</nav>
+<main>
+    <Button id="ShowBtn">Show/Hide Options</Button>
+    <div class="MainBox">
+        <ul class="List">
+            <li class="Features middle"><a href="./TodoList.html">Todo List</a></li>
+            <li class="Features middle"><a href="./Dictonary.html">Dictonary</a></li>
+            <li class="Features middle"><a href="./CurrencyConvert.html">Currency <img src="Images/favicon-16x16.png"
+                        alt="Converter" style="position: relative; top: 2px;"></a></li>
+            <li class="Features middle"><a href="./Weather.html">Weather</a></li>
+
+        </ul>
+    </div>
+    <div class="MainBox2">
+    </div>
+</main>
+<aside>
+    <div class="AsideMain">
+        <div class="AsideBox1">
+            <h1>
+                Daily Quote
+            </h1>
+            <p id="Quote">
+
+            </p>
+            <p id="author"></p>
+        </div>
+        <div class="AsideBox2">
+            <h3 id="Month"></h3>
+            <h3 id="Time"></h3>
+        </div>
+    </div>
+</aside>
+<footer>
+    <div class="FooterMain">
+        <h4 class="">
+            <P style="font-weight:lighter;">FOLLOW__<span
+                    style="font-size: 20px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                    #yash.bhosale1109</span></P>
+        </h4>
+        <ul>
+            <li><a href="https://github.com/yash11092000?tab=repositories" target="_blank"><img src="Images/Github.png"
+                        alt=""></a></li>
+            <li><a href=""><img src="Images/instagram.png" alt=""></a></li>
+            <li><a href=""><img src="Images/facebook.png" alt=""></a></li>
+        </ul>
+    </div>
+</footer>
+
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#ShowBtn").click(function () {
+                $(".MainBox").slideToggle();
+            })
+            $("#ShowBtn").click(function () {
+                $(".MainBox2").slideToggle();
+            })
+        })
+
+    </script>
+</body>
+
+</html>

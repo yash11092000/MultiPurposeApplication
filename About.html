@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&display=swap");
+      .AboutMainContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .Aboutbox1 {
+        width: 60vw;
+        height: 80vh;
+      }
+      .Aboutbox2 {
+        width: 300px;
+        height: 300px;
+        position: fixed;
+        top: 100px;
+        right: 50px;
+        background: url("./Images/img2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 40px;
+        
+      }
+      .Aboutbox2:hover{
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+      h1 {
+        font-family: "Cormorant SC", serif;
+        display: inline-block;
+        position: relative;
+        top: 30%;
+        left: 20%;
+      }
+      p {
+        font-family: "Cormorant SC", serif;
+        display: none;
+        position: relative;
+        top: 60%;
+        left: 5%;
+        font-size: 20px;
+      }
+      #AboutBtn {
+        position: fixed;
+        top: 55%;
+        left: 11%;
+      }
+      #AboutBtn {
+        width: 20%;
+        height: 40px;
+        background: #fff;
+        color: #364547;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 1rem;
+      }
+      #AboutBtn:hover {
+        background-color: #364547;
+        color: #fff;
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="navlink">
+          <a href="./index.html" id="Logo">Multi Purpose Application</a>
+        </li>
+        <li class="navlink"><a href="./Contact.html">Contact Me</a></li>
+        <li class="navlink"><a href="./About.html">About Me</a></li>
+        <li class="navlink"><a href="./Feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+    <div class="AboutMainContainer">
+      <div class="Aboutbox1">
+        <h1>
+          I am <span id="tasks" style="color: red"> coder </span>
+          <img id="image" src="./Images/abouticon1.png" alt="Image" />
+        </h1>
+        <button id="AboutBtn">
+          <img
+            id="arrimg"
+            src="./Images/down-arrow.png"
+            alt="arrow"
+            width="15px"
+            style="position: relative; top: 2px"
+          />
+          Show/Hide desc
+        </button>
+        <p class="desc">
+          I am enthusiatic
+          <span style="font-weight: 40px">Web Developer</span> with Good
+          Knowledge of Data structure and Algorithms I also Like to play
+          Games,sometimes I Do Competative Gaming,I Have Hobby of Gyming and
+          Video Editing ,Yes!! I am Introvert,Currently I am NeoSoft as
+          <i>(Traine) Software Developer </i>
+        </p>
+      </div>
+      <div class="Aboutbox2"></div>
+    </div>
+  </body>
+  <script>
+    let arr = ["Web Developer", "Gamer", "Video Editor", "Coder"];
+    let img = [
+      "./Images/abouticon0.png",
+      "./Images/abouticon1.png",
+      "./Images/abouticon2.png",
+      "./Images/abouticon3.png",
+    ];
+    let task = document.getElementById("tasks");
+
+    let i = 0;
+    setInterval(() => {
+      let image = document.getElementById("image");
+      task.innerText = arr[i % 4];
+      image.src = img[i % 4];
+      task.style.color = "red";
+      i++;
+    }, 2000);
+    $(document).ready(function () {
+      $("#AboutBtn").click(function () {
+        $(".desc").slideToggle("slow");
+      });
+    });
+  </script>
+</html>
